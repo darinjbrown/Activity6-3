@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Form</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Check Weather</h1>
+    <form action="/getWeather" method="post">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+        <br>
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+        <br>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <div th:if="${error}">
+        <p style="color: red;" th:text="${error}"></p>
+    </div>
+</body>
+</html>

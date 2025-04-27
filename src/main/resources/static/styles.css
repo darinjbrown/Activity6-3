@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.forecast {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forecast h2 {
+    color: #007bff;
+}
+
+.forecast p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.forecast-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.forecast-table thead {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+}
+
+.forecast-table th, .forecast-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.forecast-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.forecast-table th {
+    font-weight: bold;
+}
+
+.forecast-table td {
+    color: #333;
+}
+
+.forecast-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.forecast-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.forecast-table td:first-child {
+    font-weight: bold;
+    color: #007bff;
+}

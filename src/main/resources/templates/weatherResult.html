@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <table class="forecast-table">
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Forecast</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="forecast : ${forecast}">
+                <td th:text="${forecast.name}"></td>
+                <td th:text="${forecast.detailedForecast}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/">Check another location</a>
+</body>
+</html>
