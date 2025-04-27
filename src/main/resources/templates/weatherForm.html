@@ -1,3 +1,8 @@
+<!--
+    weatherForm.html
+    This template provides a form for users to input latitude and longitude.
+    It sends the data to the server for weather forecast retrieval.
+-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
@@ -19,7 +24,7 @@
     </form>
 
     <div th:if="${error}">
-        <p style="color: red;" th:text="${error}"></p>
+        <p class="error-message" th:text="${error}"></p>
     </div>
 </body>
 </html>

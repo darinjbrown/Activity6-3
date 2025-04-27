@@ -9,18 +9,35 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
+/**
+ * Controller for handling weather-related requests.
+ * Provides endpoints for displaying the input form and fetching weather data.
+ */
 @Controller
 public class WeatherController {
 
+    /**
+     * Displays the form for entering latitude and longitude.
+     *
+     * @return the name of the HTML template for the form
+     */
     @GetMapping("/")
     public String showForm() {
         return "weatherForm"; // Renders the HTML form
     }
 
+    /**
+     * Fetches weather data based on the provided latitude and longitude.
+     *
+     * @param latitude  the latitude of the location
+     * @param longitude the longitude of the location
+     * @param model     the model to pass data to the view
+     * @return the name of the HTML template for displaying the weather forecast
+     */
     @PostMapping("/getWeather")
     public String getWeather(@RequestParam("latitude") String latitude,
-                             @RequestParam("longitude") String longitude,
-                             Model model) {
+            @RequestParam("longitude") String longitude,
+            Model model) {
         // Step 1: Get grid points
         String gridUrl = "https://api.weather.gov/points/" + latitude + "," + longitude;
         RestTemplate restTemplate = new RestTemplate();
@@ -31,6 +48,7 @@ public class WeatherController {
             return "weatherForm";
         }
 
+        @SuppressWarnings("unchecked")
         var properties = (Map<String, Object>) gridResponse.get("properties");
         String office = (String) properties.get("gridId");
         String gridX = String.valueOf(properties.get("gridX"));
@@ -45,6 +63,7 @@ public class WeatherController {
             return "weatherForm";
         }
 
+        @SuppressWarnings("unchecked")
         var forecastProperties = (Map<String, Object>) forecastResponse.get("properties");
         model.addAttribute("forecast", forecastProperties.get("periods"));
 
